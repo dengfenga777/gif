@@ -1,17 +1,23 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Misaya icon">
   <defs>
-    <linearGradient id="bg" x1="64" y1="54" x2="450" y2="462" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#38bdf8"/>
-      <stop offset="0.46" stop-color="#2563eb"/>
-      <stop offset="1" stop-color="#7c3aed"/>
+    <linearGradient id="panel" x1="64" y1="54" x2="450" y2="462" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#151515"/>
+      <stop offset="0.54" stop-color="#08080a"/>
+      <stop offset="1" stop-color="#000000"/>
     </linearGradient>
-    <linearGradient id="stroke" x1="120" y1="130" x2="392" y2="366" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#ffffff"/>
-      <stop offset="1" stop-color="#dbeafe"/>
+    <linearGradient id="edge" x1="76" y1="56" x2="430" y2="456" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.34"/>
+      <stop offset="0.52" stop-color="#8ab4f8" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.12"/>
     </linearGradient>
-    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="16" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.1 0 0 0 0 0.45 0 0 0 0 1 0 0 0 0.55 0" result="coloredBlur"/>
+    <linearGradient id="signal" x1="112" y1="162" x2="404" y2="332" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="0.48" stop-color="#93c5fd"/>
+      <stop offset="1" stop-color="#ffffff"/>
+    </linearGradient>
+    <filter id="softBlue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.18 0 0 0 0 0.42 0 0 0 0 1 0 0 0 0.38 0" result="coloredBlur"/>
       <feMerge>
         <feMergeNode in="coloredBlur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -19,20 +25,23 @@
     </filter>
   </defs>
 
-  <rect width="512" height="512" rx="116" fill="#020617"/>
-  <rect x="42" y="42" width="428" height="428" rx="96" fill="url(#bg)" filter="url(#glow)"/>
+  <rect width="512" height="512" rx="116" fill="#000000"/>
+  <rect x="42" y="42" width="428" height="428" rx="96" fill="url(#panel)"/>
+  <rect x="51" y="51" width="410" height="410" rx="88" fill="none" stroke="url(#edge)" stroke-width="18"/>
   <path d="M118 330V176L202 270L256 198L394 330V176"
         fill="none"
-        stroke="#020617"
-        stroke-width="50"
+        stroke="#000000"
+        stroke-width="54"
         stroke-linecap="round"
         stroke-linejoin="round"
-        opacity="0.72"/>
+        opacity="0.94"/>
   <path d="M118 330V176L202 270L256 198L394 330V176"
         fill="none"
-        stroke="url(#stroke)"
+        stroke="url(#signal)"
         stroke-width="28"
         stroke-linecap="round"
-        stroke-linejoin="round"/>
-  <circle cx="395" cy="170" r="18" fill="#e0f2fe"/>
+        stroke-linejoin="round"
+        filter="url(#softBlue)"/>
+  <circle cx="395" cy="170" r="18" fill="#f8fafc" filter="url(#softBlue)"/>
+  <circle cx="395" cy="170" r="8" fill="#8ab4f8"/>
 </svg>
